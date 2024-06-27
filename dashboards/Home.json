@@ -1,0 +1,1226 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "includeVars": false,
+      "keepTime": false,
+      "tags": [
+        "General"
+      ],
+      "targetBlank": false,
+      "title": "General Dashboards",
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    },
+    {
+      "asDropdown": false,
+      "icon": "dashboard",
+      "includeVars": false,
+      "keepTime": false,
+      "tags": [],
+      "targetBlank": false,
+      "title": "All Dashboards",
+      "tooltip": "",
+      "type": "link",
+      "url": "/dashboards"
+    }
+  ],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 15,
+        "x": 0,
+        "y": 0
+      },
+      "id": 5,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/cd58a117-f2f8-404c-bf86-e7c4fe97e1f2"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "Long Term Data",
+            "url": "/d/ee283c4a-e281-4361-979d-3024bf2421d0"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/K39CySI4z"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "targetBlank": false,
+            "title": "Chemistry",
+            "url": "/d/IiBqSx24k"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Seismic Drums",
+            "url": "/d/c2287038-bb23-4916-a0cc-3a8b2d67007e"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "GNSS",
+            "url": "/d/cbbf53c6-b22c-42de-b0cc-d85bb4f220ef"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Microphones",
+            "url": "/d/f97f2065-d8f5-4d82-b8ee-b684f8246c37"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "RSAM & SSAM",
+            "url": "/d/b00518df-cc81-42e2-a577-502c0f44cc2f"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Whaakari - White Island",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 200%;\n    padding: 1.0%;\n    margin-up: 5.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 15,
+        "y": 0
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 6,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "whiteisland"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 15,
+        "x": 0,
+        "y": 6
+      },
+      "id": 1,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/iOtjfol4z"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "Long Term Data",
+            "url": "/d/Dl-Mr9e7z"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/Y7XSZRRVk"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "targetBlank": false,
+            "title": "Chemistry",
+            "url": "/d/05n3g_04k"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Seismic Drums",
+            "url": "/d/fa793a37-5677-4e4d-90cd-876bec2ef011"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "GNSS",
+            "url": "/d/dddccc9d-c9bb-4bd7-9709-c72ac9660237"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Microphones",
+            "url": "/d/a317f382-f626-4ec8-949f-14d02d79ff8d"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "RSAM & SSAM",
+            "url": "/d/f3db5346-0709-4dd0-b6e5-ade81e5d772e"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "VUMT",
+            "url": "/d/3tSe4iUVk"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "SO2 monitoring",
+            "url": "/d/b1f2d57d-9cf5-4fe4-a009-661de69cb71e"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Ruapehu",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 200%;\n    padding: 1.0%;\n    margin-up: 5.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 15,
+        "y": 6
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 14,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "ruapehu"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 15,
+        "x": 0,
+        "y": 12
+      },
+      "id": 8,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/d5999300-f098-42a5-a790-2005e61731e9"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "Long Term Data",
+            "url": "/d/GIf4twSVz"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/rf9d8wSVz"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "targetBlank": false,
+            "title": "Chemistry",
+            "url": "/d/IqRZMtA4k"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Seismic Drums",
+            "url": "/d/de1c3c40-d5f7-4979-b559-e1fcd43b672d"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "GNSS",
+            "url": "/d/e27a3b6c-5258-458b-a489-5b6c861571a4"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "RSAM & SSAM",
+            "url": "/d/b25f0012-2b06-407d-8127-d277bb51ef96"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Taupo",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 200%;\n    padding: 1.0%;\n    margin-up: 5.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 15,
+        "y": 12
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 15,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "taupo"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 5,
+        "w": 15,
+        "x": 0,
+        "y": 18
+      },
+      "id": 11,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/ccf7c463-9217-47a2-b802-798cb303617b"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "Long Term Data",
+            "url": "/d/bfa18b53-7d9b-4993-ba32-5e119b6c3477"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/f1106db5-2cf1-48f5-b9f1-929c5d42628c"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Taranaki",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 200%;\n    padding: 1.0%;\n    margin-up: 5.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 5,
+        "w": 9,
+        "x": 15,
+        "y": 18
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 16,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "taranakiegmont"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 15,
+        "x": 0,
+        "y": 23
+      },
+      "id": 12,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/d5a09610-6e57-4a2f-8f8e-17e77dd3e5b3"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "Long Term Data",
+            "url": "/d/Xlun9QIVz"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/ZFA7twI4k"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "targetBlank": false,
+            "title": "Chemistry",
+            "url": "/d/zi7p7tAVz"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Seismic Drums",
+            "url": "/d/ac5e54ff-25cc-4340-b46b-636a5f24fd1d"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "GNSS",
+            "url": "/d/b7f7beb9-1772-4332-a5f9-44e18a5337d7"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "RSAM & SSAM",
+            "url": "/d/e581e827-c9f8-4a83-957d-52bb15db9dcf"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Tongariro & Ngauruhoe",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 175%;\n    padding: 0.25%;\n    margin: 0.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 3,
+        "w": 9,
+        "x": 15,
+        "y": 23
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 17,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "tongariro"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 175%;\n    padding: 0.25%;\n    margin: 0.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 3,
+        "w": 9,
+        "x": 15,
+        "y": 26
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 18,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "ngauruhoe"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 15,
+        "x": 0,
+        "y": 29
+      },
+      "id": 13,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/d2a0b0ee-df7c-449f-bfc7-950297e6b51a"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "Long Term Data",
+            "url": "/d/d117021f-d8c1-4694-8ed2-80fb07489247"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/d188a005-e8df-463b-9050-7b99fd896b20"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "targetBlank": false,
+            "title": "Chemistry",
+            "url": "/d/dVlPntA4z"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Rotorua",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 200%;\n    padding: 1.0%;\n    margin-up: 5.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 15,
+        "y": 29
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 19,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "rotorua"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 15,
+        "x": 0,
+        "y": 35
+      },
+      "id": 20,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/e274b54b-5194-4b1c-ac27-a9231203ab88"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "Long Term Data",
+            "url": "/d/ca693659-ccc6-4269-98ba-77005c02a338"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/aa563307-3f13-4911-97ac-d2ad607ee17b"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "GNSS",
+            "url": "/d/f58a6526-e9f0-4aa1-ba4b-ea080b87df1f"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Chemistry",
+            "url": "/d/fe2424c1-2367-4310-b45f-2652e5ef3076"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Okataina",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 200%;\n    padding: 1.0%;\n    margin-up: 5.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 15,
+        "y": 35
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 21,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "okataina"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 15,
+        "x": 0,
+        "y": 41
+      },
+      "id": 22,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/c834e80b-28d7-4082-877b-e3f1f2eb755b"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/e969e3fd-801e-448d-ad0f-d88b74026840"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "RSAM & SSAM",
+            "url": "/d/c1a25273-13df-4d94-862c-51ea41d4cd07"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Seismic Drums",
+            "url": "/d/a9b3253f-cbea-4894-9c02-9d71f3f21f60"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Auckland",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 200%;\n    padding: 1.0%;\n    margin-up: 5.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 15,
+        "y": 41
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 23,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "aucklandvolcanicfield"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 15,
+        "x": 0,
+        "y": 47
+      },
+      "id": 24,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/d1f25e63-e522-44f1-972a-fba94bfa7bc7"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/f62d5e96-ca5a-48fa-a91f-a088f3bfd83a"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "RSAM & SSAM",
+            "url": "/d/c1a25273-13df-4d94-862c-51ea41d4cd07"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Seismic Drums",
+            "url": "/d/a9b3253f-cbea-4894-9c02-9d71f3f21f60"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Northland",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 200%;\n    padding: 1.0%;\n    margin-up: 5.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 15,
+        "y": 47
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 25,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "northland"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 15,
+        "x": 0,
+        "y": 53
+      },
+      "id": 26,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/b0c595b0-2033-4bba-b978-f81f78dafdda"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/a6b6d144-ad00-4567-8b81-da1c240a89c8"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "RSAM & SSAM",
+            "url": "/d/b168554f-f467-410e-971a-6da2e6291726"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Seismic Drums",
+            "url": "/d/ac8d1a39-724c-41a2-9f82-516a2701a1cf"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "Long Term Data",
+            "url": "/d/a5c44c53-f533-47aa-bb96-0aee8acf6fef"
+          },
+          {
+            "color": "#24292e",
+            "group": "All Data",
+            "icon": "",
+            "title": "Chemistry",
+            "url": "/d/umbUGpA4z"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Kermadec Islands",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 200%;\n    padding: 1.0%;\n    margin-up: 5.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 15,
+        "y": 53
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 27,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nVAL.innerHTML = row[\"volcanoTitle\"] + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "kermadecislands"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 15,
+        "x": 0,
+        "y": 59
+      },
+      "id": 28,
+      "options": {
+        "navData": [
+          {
+            "color": "#24292e",
+            "group": "Overview",
+            "icon": "",
+            "title": "Overview",
+            "url": "/d/fa01781b-0bfc-49a8-9abd-1efdadd91bec"
+          },
+          {
+            "color": "#24292e",
+            "group": "Regional",
+            "icon": "",
+            "title": "RSAM & SSAM Data",
+            "url": "/d/dde65c86-36e1-401c-9d8d-4ff645ccf297"
+          }
+        ],
+        "navTheme": "box",
+        "navTitleSize": "md",
+        "navWidth": 174,
+        "showGroupName": true,
+        "showLinkIcon": true
+      },
+      "title": "Tuhua - Mayor Island",
+      "type": "lework-lenav-panel"
+    },
+    {
+      "aliasColors": {},
+      "css_data": "\nh1 {\n    color: black;\n    text-align: center;\n\n    font-family: \"Tahoma\";\n    font-size: 200%;\n    padding: 1.0%;\n    margin-up: 5.0%;\n}",
+      "datasource": {
+        "type": "gns-volcanoalert-datasource",
+        "uid": "GeqOekn4k"
+      },
+      "description": "",
+      "doInit": {},
+      "format": "short",
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 15,
+        "y": 59
+      },
+      "handleMetric": {},
+      "html_data": "<h1 id=\"val\">\n</h1>\n<h1 id=\"acc\">\n</h1>",
+      "id": 29,
+      "js_code": "row = ctrl.data[0].rows[0];\nlet VAL = htmlnode.getElementById('val');\nlet volcanoTitle;\nif ( row[\"volcanoTitle\"] == \"Mayor Island\" ) {\n    volcanoTitle = \"Tuhua/\" + row[\"volcanoTitle\"];\n} else {\n    volcanoTitle = row[\"volcanoTitle\"];\n}\nVAL.innerHTML = volcanoTitle + \"   VAL: \" + row[\"level\"];\nVAL.style.background = row[\"alert_color\"]\n\nrow = ctrl.data[0].rows[0];\nlet ACC = htmlnode.getElementById('acc');\nACC.innerHTML = \"ACC: \" + row[\"acc\"];\nACC.style.background = row[\"acc\"]",
+      "js_init_code": "",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "gns-volcanoalert-datasource",
+            "uid": "GeqOekn4k"
+          },
+          "refId": "A",
+          "volcanoID": "mayorisland"
+        }
+      ],
+      "transparent": true,
+      "type": "aidanmountford-html-panel"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Home",
+  "uid": "b07eb357-8ead-4c02-b167-2684f376ef8f",
+  "version": 3,
+  "weekStart": ""
+}
