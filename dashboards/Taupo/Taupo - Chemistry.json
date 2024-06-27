@@ -1,0 +1,3843 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 2,
+  "id": 49,
+  "links": [
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "includeVars": false,
+      "keepTime": false,
+      "tags": [
+        "Taupo Region"
+      ],
+      "targetBlank": false,
+      "title": "Taupo Regional Dashboards",
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    },
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "includeVars": false,
+      "keepTime": false,
+      "tags": [
+        "Taupo All Data"
+      ],
+      "targetBlank": false,
+      "title": "Taupo All Data",
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    },
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "includeVars": false,
+      "keepTime": false,
+      "tags": [
+        "General"
+      ],
+      "targetBlank": false,
+      "title": "General Dashboards",
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    },
+    {
+      "asDropdown": false,
+      "icon": "dashboard",
+      "includeVars": false,
+      "keepTime": false,
+      "tags": [],
+      "targetBlank": false,
+      "title": "All Dashboards",
+      "tooltip": "",
+      "type": "link",
+      "url": "/dashboards"
+    }
+  ],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "marcusolsson-json-datasource",
+        "uid": "a4d20345-9f82-4d92-949e-c7d35b9451ff"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "id": 100,
+      "options": {
+        "basemap": {
+          "config": {},
+          "name": "Layer 0",
+          "opacity": 0.9,
+          "type": "osm-standard"
+        },
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": false,
+          "showDebug": false,
+          "showMeasure": false,
+          "showScale": false,
+          "showZoom": true
+        },
+        "layers": [
+          {
+            "config": {
+              "showLegend": false,
+              "style": {
+                "color": {
+                  "fixed": "light-yellow"
+                },
+                "opacity": 1,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 11,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/square.svg",
+                  "mode": "fixed"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "Taupo",
+            "tooltip": true,
+            "type": "markers"
+          }
+        ],
+        "tooltip": {
+          "mode": "details"
+        },
+        "view": {
+          "allLayers": true,
+          "id": "coords",
+          "lat": -38.965419,
+          "lon": 175.766075,
+          "zoom": 14.28
+        }
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "cacheDurationSeconds": 300,
+          "datasource": {
+            "type": "marcusolsson-json-datasource",
+            "uid": "a4d20345-9f82-4d92-949e-c7d35b9451ff"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].latitude",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].longitude",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].station",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].stationElevationM",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].stationLocality",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "method": "GET",
+          "params": [
+            [
+              "station",
+              "TP041"
+            ]
+          ],
+          "queryParams": "",
+          "refId": "A",
+          "urlPath": "/manualcollect"
+        },
+        {
+          "cacheDurationSeconds": 300,
+          "datasource": {
+            "type": "marcusolsson-json-datasource",
+            "uid": "a4d20345-9f82-4d92-949e-c7d35b9451ff"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].latitude",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].longitude",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].station",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].stationElevationM",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].stationLocality",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "hide": false,
+          "method": "GET",
+          "params": [
+            [
+              "station",
+              "TP042"
+            ]
+          ],
+          "queryParams": "",
+          "refId": "B",
+          "urlPath": "/manualcollect"
+        },
+        {
+          "cacheDurationSeconds": 300,
+          "datasource": {
+            "type": "marcusolsson-json-datasource",
+            "uid": "a4d20345-9f82-4d92-949e-c7d35b9451ff"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].latitude",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].longitude",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].station",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].stationElevationM",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].stationLocality",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "hide": false,
+          "method": "GET",
+          "params": [
+            [
+              "station",
+              "TP043"
+            ]
+          ],
+          "queryParams": "",
+          "refId": "C",
+          "urlPath": "/manualcollect"
+        },
+        {
+          "cacheDurationSeconds": 300,
+          "datasource": {
+            "type": "marcusolsson-json-datasource",
+            "uid": "a4d20345-9f82-4d92-949e-c7d35b9451ff"
+          },
+          "fields": [
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].latitude",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].longitude",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].station",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].stationElevationM",
+              "language": "jsonpath",
+              "name": ""
+            },
+            {
+              "jsonPath": "$.domain.manualcollect.stations[*].stationLocality",
+              "language": "jsonpath",
+              "name": ""
+            }
+          ],
+          "hide": false,
+          "method": "GET",
+          "params": [
+            [
+              "station",
+              "TP044"
+            ]
+          ],
+          "queryParams": "",
+          "refId": "D",
+          "urlPath": "/manualcollect"
+        }
+      ],
+      "transformations": [
+        {
+          "id": "merge",
+          "options": {}
+        }
+      ],
+      "type": "geomap"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "id": 104,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<h1> Taupo Chemistry </h1>",
+        "mode": "html"
+      },
+      "pluginVersion": "9.5.2",
+      "title": "All Data:",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 11
+      },
+      "id": 101,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "repeat": "name",
+      "repeatDirection": "h",
+      "targets": [
+        {
+          "aspect": "nil",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-Al-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "nil",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Al-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "nil",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Al-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "nil",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Al-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "Al concentration in a water sample ${__from:date:YYYY-MM-DD}/${__to:date:YYYY-MM-DD}",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Al-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 8,
+        "y": 11
+      },
+      "id": 103,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "repeatDirection": "h",
+      "targets": [
+        {
+          "aspect": "nil",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-As-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "nil",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-As-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "nil",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-As-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "nil",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-As-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "As concentration in a water sample ${__from:date:YYYY-MM-DD}/${__to:date:YYYY-MM-DD}",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Al-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 11
+      },
+      "id": 11,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-B-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-B-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-B-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-B-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "B concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " B-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 17
+      },
+      "id": 10,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-Br-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Br-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Br-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Br-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "Br concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Br-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 8,
+        "y": 17
+      },
+      "id": 12,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-Ca-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Ca-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Ca-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Ca-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "Ca concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Ca-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 17
+      },
+      "id": 13,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-Cl-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Cl-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Cl-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Cl-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "Cl concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Cl-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 23
+      },
+      "id": 105,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-F-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-F-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-F-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-F-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "F concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Cl-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 8,
+        "y": 23
+      },
+      "id": 106,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-Fe-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Fe-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Fe-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Fe-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "Fe concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Cl-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 23
+      },
+      "id": 18,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-H2S-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-H2S-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-H2S-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-H2S-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "H2S concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " H2S-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 29
+      },
+      "id": 19,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-HCO3-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-HCO3-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-HCO3-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-HCO3-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "HCO3 concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " HCO3-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 29
+      },
+      "id": 107,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-K-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-K-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-K-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-K-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "K concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " HCO3-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 29
+      },
+      "id": 21,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-Li-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Li-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Li-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Li-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "Li concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Li-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 36
+      },
+      "id": 22,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-Mg-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Mg-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Mg-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Mg-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "Mg concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Mg-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 36
+      },
+      "id": 24,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-NH3-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-NH3-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-NH3-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-NH3-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "NH3 concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " NH3-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 36
+      },
+      "id": 25,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-NO3-N-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-NO3-N-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-NO3-N-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-NO3-N-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "NO3-N concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " NO3-N-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 43
+      },
+      "id": 23,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-Na-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Na-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Na-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-Na-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "Na concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Na-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 43
+      },
+      "id": 108,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-PO4-P-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-PO4-P-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-PO4-P-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-PO4-P-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "PO4-P concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " Na-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 43
+      },
+      "id": 27,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-SO4-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-SO4-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-SO4-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-SO4-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "SO4 concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " SiO2-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 50
+      },
+      "id": 28,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-SiO2-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-SiO2-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-SiO2-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-SiO2-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "SiO2 concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " SO4-w (mg/L)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 50
+      },
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-d18O-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-d18O-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-d18O-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-d18O-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "d18O concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " d18O-w (per mil)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 50
+      },
+      "id": 15,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-d2H-conc",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-d2H-conc",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-d2H-conc",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-d2H-conc",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "d2H concentration in a water sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " d2H-w (per mil)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "gns-tilde-datasource",
+        "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 57
+      },
+      "id": 26,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.3.1",
+      "targets": [
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "name": "spring-pH",
+          "refId": "A",
+          "sensorCode": "MC01",
+          "station": "TP041",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-pH",
+          "refId": "B",
+          "sensorCode": "MC01",
+          "station": "TP042",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-pH",
+          "refId": "C",
+          "sensorCode": "MC01",
+          "station": "TP043",
+          "type": "-"
+        },
+        {
+          "aspect": "-",
+          "datasource": {
+            "type": "gns-tilde-datasource",
+            "uid": "b5206a0c-9805-46f4-932f-ca45113e69b6"
+          },
+          "domain": "manualcollect",
+          "hide": false,
+          "name": "spring-pH",
+          "refId": "D",
+          "sensorCode": "MC01",
+          "station": "TP044",
+          "type": "-"
+        }
+      ],
+      "title": "degree of acidity or alkalinity of a sample",
+      "transformations": [
+        {
+          "id": "convertFieldType",
+          "options": {
+            "conversions": [
+              {
+                "destinationType": "time",
+                "targetField": "date-time"
+              },
+              {
+                "destinationType": "number",
+                "targetField": " ph (-)"
+              }
+            ],
+            "fields": {}
+          }
+        }
+      ],
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [
+    "Taupo All Data"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "2004-05-18T00:00:00.000Z",
+    "to": "2019-12-31T11:00:00.000Z"
+  },
+  "timepicker": {},
+  "timezone": "utc",
+  "title": "Chemistry - Taupo",
+  "uid": "IqRZMtA4k",
+  "version": 10,
+  "weekStart": ""
+}

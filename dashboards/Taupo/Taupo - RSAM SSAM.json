@@ -1,0 +1,174 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 40,
+    "links": [
+      {
+        "asDropdown": true,
+        "icon": "external link",
+        "includeVars": false,
+        "keepTime": false,
+        "tags": [
+          "Taupo Region"
+        ],
+        "targetBlank": false,
+        "title": "Taupo Regional Dashboards",
+        "tooltip": "",
+        "type": "dashboards",
+        "url": ""
+      },
+      {
+        "asDropdown": true,
+        "icon": "external link",
+        "includeVars": false,
+        "keepTime": false,
+        "tags": [
+          "Taupo All Data"
+        ],
+        "targetBlank": false,
+        "title": "Taupo All Data",
+        "tooltip": "",
+        "type": "dashboards",
+        "url": ""
+      },
+      {
+        "asDropdown": true,
+        "icon": "external link",
+        "includeVars": false,
+        "keepTime": false,
+        "tags": [
+          "General"
+        ],
+        "targetBlank": false,
+        "title": "General Dashboards",
+        "tooltip": "",
+        "type": "dashboards",
+        "url": ""
+      },
+      {
+        "asDropdown": false,
+        "icon": "dashboard",
+        "includeVars": false,
+        "keepTime": false,
+        "tags": [],
+        "targetBlank": false,
+        "title": "All Dashboards",
+        "tooltip": "",
+        "type": "link",
+        "url": "/dashboards"
+      }
+    ],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 8,
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "<h1> Taupo RSAM and SSAM </h1>",
+          "mode": "html"
+        },
+        "pluginVersion": "9.5.2",
+        "title": "All Data:",
+        "transparent": true,
+        "type": "text"
+      },
+      {
+        "aliasColors": {},
+        "css_data": "img { \n    padding: 0; \n    margin: 0; \n    vertical-align: middle;\n    } ",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "doInit": {},
+        "format": "short",
+        "gridPos": {
+          "h": 80,
+          "w": 24,
+          "x": 0,
+          "y": 3
+        },
+        "handleMetric": {},
+        "html_data": "<div id=\"target\"> \n</div>",
+        "id": 6,
+        "js_code": "/// -- get station names and plot type\nvar siteID = ctrl.dashboard.templating.list[0].query;\nlet site_array = siteID.split(\",\");\nvar type = ctrl.dashboard.templating.list[1].query;\nvar plot = ctrl.dashboard.templating.list[2].query;\n\n\n/// clean up\nwhile(htmlnode.firstChild){\n    htmlnode.removeChild(htmlnode.firstChild);\n}\n\n/// loop over sites\nlet base = \"https://images.geonet.org.nz/volcano/drums/latest/\";\nfor (let i = 0; i < site_array.length; i++) {\n    let site = site_array[i].toLowerCase();\n    \n    url = base + site + \"-\" + type + \"-\" + plot + \".png\";\n    \n    const newDiv = document.createElement(\"img\");\n    newDiv.id = site_array[i];\n    newDiv.src = url; \n    newDiv.style.width = \"33%\"\n    htmlnode.appendChild(newDiv)\n}\n",
+        "js_init_code": "",
+        "links": [],
+        "maxDataPoints": 3,
+        "nullPointMode": "connected",
+        "transparent": true,
+        "type": "aidanmountford-html-panel"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [
+      "Taupo All Data"
+    ],
+    "templating": {
+      "list": [
+        {
+          "hide": 2,
+          "name": "siteID",
+          "query": "ARAZ,HATZ,KATZ,KUTZ,POIZ,RATZ,RITZ,WATZ,WHTZ,",
+          "skipUrlSync": false,
+          "type": "constant"
+        },
+        {
+          "hide": 2,
+          "name": "type",
+          "query": "seismic",
+          "skipUrlSync": false,
+          "type": "constant"
+        },
+        {
+          "hide": 2,
+          "name": "plot",
+          "query": "combined",
+          "skipUrlSync": false,
+          "type": "constant"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "utc",
+    "title": "RSAM - SSAM - Taupo",
+    "uid": "b25f0012-2b06-407d-8127-d277bb51ef96",
+    "version": 4,
+    "weekStart": ""
+  }
